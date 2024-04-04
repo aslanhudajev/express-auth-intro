@@ -1,0 +1,38 @@
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        title Express Auth Intro
+    body
+        header.header
+            h1 Express Auth Intro 
+        main 
+            section.header 
+                if user 
+                    h2 Welcome back #{user.username}
+                    a(href="/signout")
+                        button Sign out
+                else 
+                    h2 Please log in
+                    br
+                    br 
+                    div.sign-form
+                        h2 Sign in
+                        form(action="/signin" method="POST")
+                            label(for="username") Username
+                            input(type="text" name="username")
+                            label(for="password") Password
+                            input(type="password" name="password")
+                            button(type="submit") Sign in
+                        br
+                        br
+
+                        h2 ...or Sign up 
+                        h2 Sign Up 
+                        form(action="/signup" method="POST")
+                            label(for="username") Username
+                            input(type="text" name="username")
+                            label(for="password") Password
+                            input(type="password" name="password")
+                            button(type="submit") Sign up
